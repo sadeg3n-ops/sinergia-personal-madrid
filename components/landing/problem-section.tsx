@@ -45,7 +45,7 @@ export function ProblemSection() {
               <Card 
                 className="bg-slate-50 border-slate-200 hover:border-orange-500/50 transition-all duration-300 hover:shadow-lg group h-full"
               >
-                <CardContent className="p-6 md:p-8">
+                <CardContent className="p-6 md:p-8 flex flex-col items-center text-center">
                   <div className="w-14 h-14 rounded-xl bg-orange-500/10 flex items-center justify-center mb-6 group-hover:bg-orange-500/20 transition-colors">
                     <problem.icon className="w-7 h-7 text-orange-500" />
                   </div>
