@@ -7,18 +7,18 @@ import { Reveal } from "@/components/ui/reveal"
 const problems = [
   {
     icon: TrendingDown,
-    title: "Falta de constancia",
-    description: "Pagas cada mes, pero nunca encuentras el momento de ir. La motivación desaparece en semanas."
+    title: "Cero adherencia y constancia",
+    description: "Pagas tu cuota puntualmente, pero la motivación inicial se esfuma en pocas semanas y las excusas siempre ganan."
   },
   {
     icon: Users,
-    title: "Máquinas ocupadas y miradas incómodas",
-    description: "Esperas largas, gente que te mira, ambiente intimidante. ¿Para qué vas?"
+    title: "Masificación y miradas incómodas",
+    description: "Tiempos de espera interminables, ambiente intimidante y distracciones constantes. Entrenar se vuelve un estrés añadido."
   },
   {
     icon: AlertCircle,
-    title: "Dolor articular por mala técnica",
-    description: "Lesiones, dolores crónicos. Sin supervisión experta, cada repetición es un riesgo."
+    title: "Dolores por mala ejecución",
+    description: "Molestias y lesiones recurrentes por falta de supervisión. Sin un experto guiándote, cada repetición es un riesgo."
   }
 ]
 
@@ -29,12 +29,12 @@ export function ProblemSection() {
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 text-balance">
-              ¿Cansado de pagar la cuota y no ir?
+              ¿Cansado de estar apuntado al gimnasio y no ir?
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="text-lg text-slate-600">
-              Estos problemas son más comunes de lo que crees. Y no es tu culpa.
+              La mayoría de gimnasios basan su negocio en que pagues y no vayas. No es tu falta de voluntad, es el entorno.
             </p>
           </Reveal>
         </div>

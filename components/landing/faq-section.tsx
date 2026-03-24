@@ -10,12 +10,24 @@ import { Reveal } from "@/components/ui/reveal"
 
 const faqs = [
   {
-    question: "¿Y si nunca he hecho deporte o estoy en baja forma?",
-    answer: "Es el momento perfecto. Empezaremos desde cero absoluto, a tu ritmo y sin juicios. Nuestro programa está diseñado para adaptarse a cualquier nivel inicial."
+    question: "¿Y si nunca he hecho deporte o estoy en muy baja forma?",
+    answer: "Es el momento perfecto de empezar de verdad. Trabajaremos desde cero absoluto, a tu ritmo y sin presiones. Nuestro servicio está pensado para enseñar y acompañar, sin importar lo lejos que estés de tu objetivo ahora mismo."
   },
   {
-    question: "¿Tengo que hacer una dieta estricta?",
-    answer: "No. Te enseñamos a comer lo que te gusta ajustando las cantidades para lograr tus objetivos. Nada de restricciones absurdas ni alimentos prohibidos."
+    question: "Tengo lesiones previas o dolores articulares, ¿puedo entrenar?",
+    answer: "Por supuesto. En la valoración inicial analizaremos tus limitaciones y antecedentes. Adaptaremos por completo la biomecánica de los ejercicios para que entrenes de forma totalmente segura, buscando rehabilitar el movimiento y que dejes de vivir con dolores."
+  },
+  {
+    question: "¿Tengo que hacer una dieta estricta o eliminar carbohidratos?",
+    answer: "En absoluto. La mejor dieta es la que puedes mantener en el tiempo. Te enseñaremos a nutrirte comiendo las cosas que más te gustan, ajustando las cantidades de macronutrientes a tus necesidades. Sin sufrir, sin pasar hambre y sin dejar de lado tu vida social."
+  },
+  {
+    question: "¿Cuántos días a la semana de entrenamiento necesito?",
+    answer: "Depende de tu disponibilidad y objetivos, pero con 2 o 3 sesiones semanales bien aprovechadas en nuestro centro, notarás un salto de calidad increíble. No se trata de machacarse todos los días de la semana, sino de dar el estímulo adecuado al cuerpo cuando vienes a vernos."
+  },
+  {
+    question: "¿Cómo funciona exactamente la valoración inicial gratuita?",
+    answer: "Es una primera toma de contacto de unos 30-45 minutos. Charlaremos sobre tu historial, tus frustraciones pasadas con el deporte y qué quieres conseguir. Evaluaremos tu movilidad general y te explicaremos con total transparencia cómo trabajamos. Sin compromisos ni técnicas de venta agresivas."
   }
 ]
 

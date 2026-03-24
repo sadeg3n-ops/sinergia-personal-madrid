@@ -10,7 +10,7 @@ const testimonials = [
     name: "Laura S.",
     age: "42 años",
     avatar: "/images/avatar-1.jpg",
-    quote: "Llevaba 5 años apuntada al gimnasio sin resultados. Con Sinergia, perdí 12kg en 3 meses entrenando 3 días a la semana sin dolor de espalda.",
+    quote: "Llevaba casi 5 años apuntada al gimnasio sin ver un solo cambio de verdad. Con el equipo de Sinergia hemos logrado bajar 12kg en tres meses, entrenando apenas 3 días semanales y despidiéndome por fin de mis dolores de espalda.",
     result: "-12kg en 3 meses",
     beforeImage: "/images/before-1.jpg",
     afterImage: "/images/after-1.jpg"
@@ -19,7 +19,7 @@ const testimonials = [
     name: "Carlos M.",
     age: "35 años",
     avatar: "/images/avatar-2.jpg",
-    quote: "Después de dos hernias discales, pensé que nunca podría entrenar bien. Aquí aprendí a moverme sin dolor y gané 6kg de músculo en 4 meses.",
+    quote: "Tras sufrir dos hernias discales seguidas, di por hecho que entrenar intenso era imposible. Aquí me enseñaron a moverme seguro y sin dolor. He sumado 6kg de pura masa muscular en 4 meses y me siento mejor que a mis 20 años.",
     result: "+6kg músculo",
     beforeImage: "/images/before-2.jpg",
     afterImage: "/images/after-2.jpg"
@@ -38,12 +38,12 @@ export function TestimonialsSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-              Historias de Transformación Real
+              Historias Reales, Resultados Tangibles
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              Personas como tú que decidieron dar el paso.
+              Personas que un día dudaron igual que tú y hoy viven su mejor versión.
             </p>
           </Reveal>
         </div>

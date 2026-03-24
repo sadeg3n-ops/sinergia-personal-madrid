@@ -50,7 +50,7 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           {/* Main Headline */}
           <Reveal delay={0.2} duration={0.8}>
             <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-balance text-foreground">
-              Transforma tu cuerpo y tu salud{" "}
+              Consigue el físico que deseas{" "}
               <span className="animate-text-gradient bg-gradient-to-r from-primary via-orange-400 to-primary">
                 sin pisar un gimnasio masificado
               </span>
@@ -60,8 +60,8 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
           {/* Subtitle */}
           <Reveal delay={0.3} duration={0.8}>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-pretty">
-              Entrenamiento 100% privado en Madrid. Nos enfocamos en tu técnica, 
-              tus objetivos y tu constancia.
+              Entrenamiento 100% privado en Madrid. Corregimos tu técnica, 
+              garantizamos tus resultados y construimos la constancia que necesitas.
             </p>
           </Reveal>
 

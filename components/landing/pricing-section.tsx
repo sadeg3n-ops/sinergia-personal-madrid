@@ -34,12 +34,12 @@ export function PricingSection({ onCtaClick }: PricingSectionProps) {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-              Tu Plan de Transformación
+              Inicia tu Transformación Hoy
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              Una inversión en tu salud que dura toda la vida.
+              Todo lo que necesitas, concentrado en un modelo integral y garantizado.
             </p>
           </Reveal>
         </div>
@@ -58,7 +58,7 @@ export function PricingSection({ onCtaClick }: PricingSectionProps) {
                   Programa Transformación 12 Semanas
                 </h3>
                 <div className="flex items-baseline justify-center gap-1">
-                  <span className="text-5xl md:text-6xl font-bold text-primary">390€</span>
+                  <span className="text-5xl md:text-6xl font-bold text-primary">249€</span>
                   <span className="text-muted-foreground text-lg">/ mes</span>
                 </div>
               </CardHeader>

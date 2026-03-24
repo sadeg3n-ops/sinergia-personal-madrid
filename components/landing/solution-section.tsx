@@ -9,20 +9,20 @@ const features = [
   {
     icon: Lock,
     title: "Sala Privada",
-    subtitle: "Solo tú y tu entrenador",
-    description: "Sin esperas, sin distracciones, sin miradas. Un espacio diseñado exclusivamente para tu entrenamiento."
+    subtitle: "Privacidad absoluta para ti",
+    description: "Sin tiempos de espera, sin distracciones y sin miradas. Un espacio 100% equipado y diseñado en exclusiva para tu sesión y progreso."
   },
   {
     icon: Target,
-    title: "Programación a Medida",
-    subtitle: "Fuerza e hipertrofia",
-    description: "Cada sesión está diseñada según tus objetivos, tu nivel y tu historial. Progreso real, medible."
+    title: "Planificación Científica",
+    subtitle: "Fuerza, salud y estética",
+    description: "Cada entrenamiento se programa de forma individualizada según tus metas, tu punto de partida y tu biomecánica. Resultados medibles desde el primer día."
   },
   {
     icon: Apple,
-    title: "Nutrición Realista",
-    subtitle: "Sin dietas extremas",
-    description: "Te enseñamos a comer lo que te gusta ajustando las cantidades. Sin restricciones absurdas."
+    title: "Nutrición Flexible",
+    subtitle: "Come bien sin sufrir",
+    description: "Aprende a nutrirte adaptando las cantidades para conseguir tus objetivos sin dejar de lado tu vida social. Olvídate de los menús cerrados y restrictivos."
   }
 ]
 
@@ -42,12 +42,12 @@ export function SolutionSection() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-              Tu Centro Privado de Alto Rendimiento
+              La Experiencia Definitiva de Entrenamiento Privado
             </h2>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="text-lg text-muted-foreground">
-              Todo lo que necesitas para transformarte, en un solo lugar.
+              Reunimos todo lo que necesitas para lograr el cambio que buscas, sin excusas ni atajos.
             </p>
           </Reveal>
         </div>
@@ -63,7 +63,7 @@ export function SolutionSection() {
                 <Card 
                   className="h-full bg-card/50 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 group"
                 >
-                  <CardContent className={`p-6 md:p-8 flex flex-col justify-center h-full ${index === 0 ? "md:p-12 items-center text-center" : ""}`}>
+                  <CardContent className={`p-6 md:p-8 flex flex-col items-center text-center justify-center h-full ${index === 0 ? "md:p-12" : ""}`}>
                     <div className={`w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors ${index === 0 ? "w-20 h-20 mb-8" : ""}`}>
                       <feature.icon className={`text-primary ${index === 0 ? "w-10 h-10" : "w-7 h-7"}`} />
                     </div>

@@ -24,13 +24,14 @@ export function Counter({
     damping: 30,
     stiffness: 100,
   })
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const isInView = useInView(ref, { once: true, margin: "0px" })
 
   useEffect(() => {
     if (isInView) {
-      setTimeout(() => {
+      const timer = setTimeout(() => {
         motionValue.set(value)
       }, delay * 1000)
+      return () => clearTimeout(timer)
     }
   }, [isInView, value, motionValue, delay])
 
@@ -44,5 +45,5 @@ export function Counter({
     })
   }, [springValue, prefix, suffix])
 
-  return <span ref={ref}>0</span>
+  return <span ref={ref}>{prefix}0{suffix}</span>
 }
