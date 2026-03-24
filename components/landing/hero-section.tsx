@@ -2,6 +2,8 @@
 
 import { ArrowRight, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Reveal } from "@/components/ui/reveal"
+import { MagneticButton } from "@/components/ui/magnetic-button"
 
 interface HeroSectionProps {
   onCtaClick: () => void
@@ -35,56 +37,70 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
-            <Clock className="w-4 h-4 text-primary" />
-            <span className="text-sm text-primary font-medium">
-              Solo 10 plazas nuevas al mes
-            </span>
-          </div>
+          <Reveal delay={0.1}>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8 mx-auto">
+              <Clock className="w-4 h-4 text-primary" />
+              <span className="text-sm text-primary font-medium">
+                Solo 10 plazas nuevas al mes
+              </span>
+            </div>
+          </Reveal>
 
           {/* Main Headline */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-tight mb-6 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-100 text-balance">
-            Transforma tu cuerpo y tu salud{" "}
-            <span className="text-primary">sin pisar un gimnasio masificado</span>
-          </h1>
+          <Reveal delay={0.2} duration={0.8}>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6 text-balance text-foreground">
+              Transforma tu cuerpo y tu salud{" "}
+              <span className="animate-text-gradient bg-gradient-to-r from-primary via-orange-400 to-primary">
+                sin pisar un gimnasio masificado
+              </span>
+            </h1>
+          </Reveal>
 
           {/* Subtitle */}
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-200 text-pretty">
-            Entrenamiento 100% privado en Madrid. Nos enfocamos en tu técnica, 
-            tus objetivos y tu constancia.
-          </p>
+          <Reveal delay={0.3} duration={0.8}>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-pretty">
+              Entrenamiento 100% privado en Madrid. Nos enfocamos en tu técnica, 
+              tus objetivos y tu constancia.
+            </p>
+          </Reveal>
 
           {/* CTA Button */}
-          <div className="flex flex-col items-center gap-4 animate-in fade-in slide-in-from-bottom-4 duration-500 delay-300">
-            <Button 
-              onClick={onCtaClick}
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-7 rounded-xl group transition-all hover:scale-105"
-            >
-              Solicitar Valoración Gratuita
-              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-            
-            <p className="text-sm text-muted-foreground">
-              Plazas limitadas. Solo aceptamos 10 clientes nuevos al mes.
-            </p>
-          </div>
+          <Reveal delay={0.4} duration={0.8}>
+            <div className="flex flex-col items-center gap-4">
+              <MagneticButton>
+                <Button 
+                  onClick={onCtaClick}
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold text-lg px-8 py-7 rounded-xl group transition-all hover:scale-105"
+                >
+                  Solicitar Valoración Gratuita
+                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                </Button>
+              </MagneticButton>
+               
+              <p className="text-sm text-muted-foreground">
+                Plazas limitadas. Solo aceptamos 10 clientes nuevos al mes.
+              </p>
+            </div>
+          </Reveal>
 
           {/* Stats */}
-          <div className="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-16 border-t border-border animate-in fade-in slide-in-from-bottom-4 duration-500 delay-500">
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary">+200</p>
-              <p className="text-sm text-muted-foreground mt-1">Clientes transformados</p>
+          <Reveal delay={0.5} duration={0.8}>
+            <div className="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-16 border-t border-border">
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-primary">+200</p>
+                <p className="text-sm text-muted-foreground mt-1">Clientes transformados</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-primary">12</p>
+                <p className="text-sm text-muted-foreground mt-1">Semanas de programa</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl md:text-4xl font-bold text-primary">98%</p>
+                <p className="text-sm text-muted-foreground mt-1">Tasa de satisfacción</p>
+              </div>
             </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary">12</p>
-              <p className="text-sm text-muted-foreground mt-1">Semanas de programa</p>
-            </div>
-            <div className="text-center">
-              <p className="text-3xl md:text-4xl font-bold text-primary">98%</p>
-              <p className="text-sm text-muted-foreground mt-1">Tasa de satisfacción</p>
-            </div>
-          </div>
+          </Reveal>
         </div>
       </div>
 

@@ -1,8 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X, Dumbbell } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { motion, useScroll, useSpring } from "framer-motion"
 
 interface HeaderProps {
   onCtaClick: () => void
@@ -10,6 +11,23 @@ interface HeaderProps {
 
 export function Header({ onCtaClick }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  })
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50)
+    }
+    
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
     { href: "#resultados", label: "Resultados" },
@@ -18,9 +36,20 @@ export function Header({ onCtaClick }: HeaderProps) {
   ]
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+    <>
+      {/* Scroll Progress Bar */}
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-[3px] bg-primary origin-left z-[60]"
+        style={{ scaleX }}
+      />
+      
+      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? "bg-background/80 backdrop-blur-md border-b border-border py-2" 
+          : "bg-transparent border-transparent py-4"
+      }`}>
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-14 md:h-16">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2 group">
             <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -92,5 +121,6 @@ export function Header({ onCtaClick }: HeaderProps) {
         )}
       </div>
     </header>
+    </>
   )
 }

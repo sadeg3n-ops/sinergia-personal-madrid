@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { Reveal } from "@/components/ui/reveal"
 
 const faqs = [
   {
@@ -23,29 +24,34 @@ export function FaqSection() {
     <section id="faq" className="py-20 md:py-28 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
-          <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-4">
-            Preguntas Frecuentes
-          </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
-            Resolvemos tus dudas
-          </h2>
+          <Reveal>
+            <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-4">
+              Preguntas Frecuentes
+            </span>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+              Resolvemos tus dudas
+            </h2>
+          </Reveal>
         </div>
 
         <div className="max-w-2xl mx-auto">
           <Accordion type="single" collapsible className="space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`}
-                className="bg-card border border-border rounded-xl px-6 overflow-hidden"
-              >
-                <AccordionTrigger className="text-left text-foreground font-semibold py-6 hover:no-underline hover:text-primary transition-colors">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
+              <Reveal key={index} delay={0.2 + (index * 0.1)}>
+                <AccordionItem 
+                  value={`item-${index}`}
+                  className="bg-card border border-border rounded-xl px-6 overflow-hidden"
+                >
+                  <AccordionTrigger className="text-left text-foreground font-semibold py-6 hover:no-underline hover:text-primary transition-colors">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              </Reveal>
             ))}
           </Accordion>
         </div>
