@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import { motion, useInView, useAnimation, Variant } from "framer-motion"
 
 interface RevealProps {
@@ -21,8 +21,13 @@ export function Reveal({
   className = "",
 }: RevealProps) {
   const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-50px" })
+  const isInView = useInView(ref, { once: true, margin: "-20px" })
   const mainControls = useAnimation()
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768)
+  }, [])
 
   useEffect(() => {
     if (isInView) {
@@ -32,19 +37,20 @@ export function Reveal({
 
   const getVariants = (): { hidden: Variant; visible: Variant } => {
     const hiddenState = { opacity: 0 }
+    const offset = isMobile ? 30 : 75
     
     switch (direction) {
       case "up":
-        Object.assign(hiddenState, { y: 75 })
+        Object.assign(hiddenState, { y: offset })
         break
       case "down":
-        Object.assign(hiddenState, { y: -75 })
+        Object.assign(hiddenState, { y: -offset })
         break
       case "left":
-        Object.assign(hiddenState, { x: 75 })
+        Object.assign(hiddenState, { x: offset })
         break
       case "right":
-        Object.assign(hiddenState, { x: -75 })
+        Object.assign(hiddenState, { x: -offset })
         break
       default:
         break
@@ -62,7 +68,11 @@ export function Reveal({
         variants={getVariants()}
         initial="hidden"
         animate={mainControls}
-        transition={{ duration, delay, ease: [0.25, 0.46, 0.45, 0.94] }} // Custom quintic ease
+        transition={{ 
+          duration: isMobile ? duration * 0.6 : duration, 
+          delay: isMobile ? delay * 0.5 : delay, 
+          ease: [0.25, 0.46, 0.45, 0.94] 
+        }}
       >
         {children}
       </motion.div>
