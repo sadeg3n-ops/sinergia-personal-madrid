@@ -16,6 +16,7 @@ export function BeforeAfterSlider({
 }) {
   const [sliderPosition, setSliderPosition] = useState(50)
   const containerRef = useRef<HTMLDivElement>(null)
+  const activeLabel = sliderPosition >= 50 ? beforeLabel : afterLabel
 
   const handleDrag = (e: React.MouseEvent | React.TouchEvent) => {
     if (!containerRef.current) return
@@ -48,10 +49,7 @@ export function BeforeAfterSlider({
     >
       {/* Before Image */}
       <div className="absolute inset-0 w-full h-full bg-muted pointer-events-none">
-        {/* Placeholder if no image */}
-        <div className="w-full h-full flex items-center justify-center text-muted-foreground/30 bg-secondary/50">
-          <span className="text-xl font-bold">{beforeLabel}</span>
-        </div>
+        <div className="w-full h-full bg-secondary/40" />
         <img 
           src={beforeImage} 
           className="absolute inset-0 w-full h-full object-cover" 
@@ -59,9 +57,6 @@ export function BeforeAfterSlider({
           draggable="false"
           onError={(e) => e.currentTarget.style.display = 'none'}
         />
-        <div className="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-foreground pointer-events-none z-10 transition-opacity">
-          {beforeLabel}
-        </div>
       </div>
 
       {/* After Image with Clip Path */}
@@ -71,9 +66,7 @@ export function BeforeAfterSlider({
           clipPath: `polygon(${sliderPosition}% 0, 100% 0, 100% 100%, ${sliderPosition}% 100%)` 
         }}
       >
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center text-primary/30 bg-primary/5">
-          <span className="text-xl font-bold">{afterLabel}</span>
-        </div>
+        <div className="absolute inset-0 w-full h-full bg-primary/5" />
         <img 
           src={afterImage} 
           className="absolute inset-0 w-full h-full object-cover" 
@@ -83,10 +76,17 @@ export function BeforeAfterSlider({
         />
         {/* Border line */}
         <div className="absolute left-0 top-0 bottom-0 w-[4px] bg-primary shadow-[0_0_10px_rgba(0,0,0,0.5)]" />
-        <div className="absolute bottom-4 right-4 bg-primary/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-semibold text-primary-foreground pointer-events-none z-10 transition-opacity">
-          {afterLabel}
-        </div>
       </div>
+
+      <motion.div
+        className="absolute top-4 left-1/2 -translate-x-1/2 rounded-full border border-white/20 bg-black/55 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-white backdrop-blur-md pointer-events-none z-20"
+        key={activeLabel}
+        initial={{ opacity: 0.6, y: -4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.18, ease: "easeOut" }}
+      >
+        {activeLabel}
+      </motion.div>
 
       {/* Slider Handle */}
       <motion.div 
