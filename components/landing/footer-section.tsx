@@ -82,10 +82,15 @@ export function FooterSection({ onCtaClick }: FooterSectionProps) {
                   <MapPin className="w-4 h-4 text-primary" />
                   <span>Madrid, España</span>
                 </div>
-                <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                  <Phone className="w-4 h-4 text-primary" />
+                <a 
+                  href="https://wa.me/34600000000" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-muted-foreground text-sm hover:text-foreground transition-colors group"
+                >
+                  <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform" />
                   <span>+34 600 000 000</span>
-                </div>
+                </a>
               </div>
             </div>
           </div>
