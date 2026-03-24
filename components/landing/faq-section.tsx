@@ -56,10 +56,10 @@ export function FaqSection() {
                   value={`item-${index}`}
                   className="bg-card border border-border rounded-xl px-6 overflow-hidden"
                 >
-                  <AccordionTrigger className="text-left text-foreground font-semibold py-6 hover:no-underline hover:text-primary transition-colors">
+                  <AccordionTrigger className="text-center justify-center text-foreground font-semibold py-6 hover:no-underline hover:text-primary transition-colors relative [&>svg]:absolute [&>svg]:right-0 pr-6">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed">
+                  <AccordionContent className="text-muted-foreground pb-6 leading-relaxed text-center">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
@@ -69,17 +69,17 @@ export function FaqSection() {
         </div>
       </div>
       <div className="container mx-auto px-4 mt-20">
-        <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8 relative overflow-hidden">
+        <div className="max-w-xl mx-auto text-center bg-card border border-border rounded-2xl p-6 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/10 to-transparent pointer-events-none" />
           
           <Reveal>
-            <h3 className="text-2xl font-bold text-foreground mb-3">
+            <h3 className="text-xl font-bold text-foreground mb-2">
               ¿Tienes más dudas?
             </h3>
           </Reveal>
           
           <Reveal delay={0.1}>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-muted-foreground mb-6 text-sm">
               Escríbenos y te responderemos lo antes posible para ayudarte a dar el primer paso.
             </p>
           </Reveal>
@@ -89,12 +89,12 @@ export function FaqSection() {
               href="https://wa.me/34600000000?text=Hola,%20tengo%20algunas%20dudas%20sobre%20el%20entrenamiento%20personal." 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-[#25D366]/20 group"
+              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-6 py-3 rounded-xl transition-all hover:scale-105 shadow-lg shadow-[#25D366]/20 group text-sm"
             >
               <svg 
                 viewBox="0 0 24 24" 
-                width="24" 
-                height="24" 
+                width="20" 
+                height="20" 
                 stroke="currentColor" 
                 strokeWidth="2" 
                 fill="none" 
