@@ -68,6 +68,47 @@ export function FaqSection() {
           </Accordion>
         </div>
       </div>
+      <div className="container mx-auto px-4 mt-20">
+        <div className="max-w-2xl mx-auto text-center bg-card border border-border rounded-2xl p-8 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/10 to-transparent pointer-events-none" />
+          
+          <Reveal>
+            <h3 className="text-2xl font-bold text-foreground mb-3">
+              ¿Tienes más dudas?
+            </h3>
+          </Reveal>
+          
+          <Reveal delay={0.1}>
+            <p className="text-muted-foreground mb-8">
+              Escríbenos y te responderemos lo antes posible para ayudarte a dar el primer paso.
+            </p>
+          </Reveal>
+          
+          <Reveal delay={0.2}>
+            <a 
+              href="https://wa.me/34600000000?text=Hola,%20tengo%20algunas%20dudas%20sobre%20el%20entrenamiento%20personal." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold px-8 py-4 rounded-xl transition-all hover:scale-105 shadow-lg shadow-[#25D366]/20 group"
+            >
+              <svg 
+                viewBox="0 0 24 24" 
+                width="24" 
+                height="24" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                fill="none" 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                className="w-5 h-5 group-hover:-rotate-12 transition-transform"
+              >
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              Escribir por WhatsApp
+            </a>
+          </Reveal>
+        </div>
+      </div>
     </section>
   )
 }
