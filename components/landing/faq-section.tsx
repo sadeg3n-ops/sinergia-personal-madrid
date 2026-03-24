@@ -33,7 +33,7 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq" className="pt-20 md:pt-28 pb-0 bg-background">
+    <section id="faq" className="py-20 md:py-28 bg-background relative">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center mb-16">
           <Reveal>
@@ -68,8 +68,8 @@ export function FaqSection() {
           </Accordion>
         </div>
       </div>
-      <div className="container mx-auto px-4 mt-16 md:mt-20 relative z-20 translate-y-1/2">
-        <div className="max-w-xl mx-auto text-center bg-card border border-border rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-2xl">
+      <div className="container mx-auto px-4 mt-20 flex flex-col items-center">
+        <div className="max-w-xl w-full text-center bg-card border border-border rounded-2xl p-6 md:p-8 relative overflow-hidden shadow-xl">
           <div className="absolute inset-0 bg-gradient-to-br from-[#25D366]/10 to-transparent pointer-events-none" />
           
           <Reveal>
@@ -108,7 +108,24 @@ export function FaqSection() {
             </a>
           </Reveal>
         </div>
+
+        {/* Subtle scroll indicator connecting to the next section */}
+        <div className="mt-16 text-muted-foreground/40 animate-bounce">
+          <svg 
+            viewBox="0 0 24 24" 
+            width="32" 
+            height="32" 
+            stroke="currentColor" 
+            strokeWidth="1.5" 
+            fill="none" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <path d="M12 5v14M19 12l-7 7-7-7"/>
+          </svg>
+        </div>
       </div>
     </section>
   )
 }
+
