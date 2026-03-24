@@ -4,6 +4,7 @@ import { ArrowRight, Clock } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Reveal } from "@/components/ui/reveal"
 import { MagneticButton } from "@/components/ui/magnetic-button"
+import { Counter } from "@/components/ui/counter"
 
 interface HeroSectionProps {
   onCtaClick: () => void
@@ -11,7 +12,7 @@ interface HeroSectionProps {
 
 export function HeroSection({ onCtaClick }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+    <section className="relative min-h-[100dvh] flex items-center justify-center pt-24 pb-32 overflow-hidden">
       {/* Background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -83,21 +84,26 @@ export function HeroSection({ onCtaClick }: HeroSectionProps) {
               </p>
             </div>
           </Reveal>
-
           {/* Stats */}
           <Reveal delay={0.5} duration={0.8}>
-            <div className="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-16 border-t border-border">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 mt-16 pt-16 pb-12 border-t border-border/50">
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-primary">+200</p>
-                <p className="text-sm text-muted-foreground mt-1">Clientes transformados</p>
+                <p className="text-3xl md:text-5xl font-bold text-primary mb-2">
+                  <Counter value={200} prefix="+" suffix="" delay={0.1} />
+                </p>
+                <p className="text-sm md:text-base text-muted-foreground font-medium uppercase tracking-wider">Clientes</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-primary">12</p>
-                <p className="text-sm text-muted-foreground mt-1">Semanas de programa</p>
+                <p className="text-3xl md:text-5xl font-bold text-primary mb-2">
+                  <Counter value={12} delay={0.3} />
+                </p>
+                <p className="text-sm md:text-base text-muted-foreground font-medium uppercase tracking-wider">Semanas</p>
               </div>
               <div className="text-center">
-                <p className="text-3xl md:text-4xl font-bold text-primary">98%</p>
-                <p className="text-sm text-muted-foreground mt-1">Tasa de satisfacción</p>
+                <p className="text-3xl md:text-5xl font-bold text-primary mb-2">
+                  <Counter value={98} suffix="%" delay={0.5} />
+                </p>
+                <p className="text-sm md:text-base text-muted-foreground font-medium uppercase tracking-wider">Éxito</p>
               </div>
             </div>
           </Reveal>

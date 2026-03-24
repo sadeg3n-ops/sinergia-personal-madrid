@@ -15,12 +15,12 @@ export function LiveToasts() {
   const [currentToast, setCurrentToast] = useState<typeof TOASTS[0] | null>(null)
 
   useEffect(() => {
-    // Show first toast after 5s
+    // Show first toast after 15s
     const firstTimer = setTimeout(() => {
       setCurrentToast(TOASTS[0])
       
       setTimeout(() => setCurrentToast(null), 5000)
-    }, 5000)
+    }, 15000)
 
     // Then show random toasts every 15-30s
     const interval = setInterval(() => {
